@@ -28,7 +28,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *local;//为当前的本地化标题设置临时字符串引用
+    
+    //将这个临时字符串设置为Add Car按钮的本地化标题
+    local = NSLocalizedStringWithDefaultValue(@"NewCarButton", nil, [NSBundle mainBundle], @"New Car", @"Button to create and add a new car");
+    [self.addCarButton setTitle:local forState:UIControlStateNormal];//将Add Car按钮在默认状态下的标题设置为这个本地化字符串
+    
+    local = NSLocalizedStringWithDefaultValue(@"PreviousCarButton", nil, [NSBundle mainBundle], @"Previous", @"Title for button to go to the previous car");
+    [self.previousCarButton setTitle:local forState:UIControlStateNormal];
+    
+    local = NSLocalizedStringWithDefaultValue(@"NextCarButton", nil, [NSBundle mainBundle], @"Next", @"Title for button to go to the next car");
+    [self.nextCarButton setTitle:local forState:UIControlStateNormal];
+    
+    local = NSLocalizedStringWithDefaultValue(@"EditCarButton", nil, [NSBundle mainBundle], @"Edit", @"Title for button to edit the current car");
+    [self.editCarButton setTitle:local forState:UIControlStateNormal];
+    
+    
     arrayOfCars = [[NSMutableArray alloc] init];//初始化汽车的数组为空数组
     displayedCarIndex = 0;//显示创建的第一辆汽车
     [self setupLandscapeConstraints];

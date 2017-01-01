@@ -36,15 +36,6 @@
     return self;
 }
 
-//- (void)printCarInfo {//打印信息，当_make和_model不为空的时候才能打印（空的时候就是初始化没有啥意义打印也是白打）
-//    if (!_make) return;
-//    if (!_model) return;
-//    //NSlog是想控制台打印的方法
-//    NSLog(@"Car Make: %@",_make);
-//    NSLog(@"Car Model: %@",_model);
-//    NSLog(@"Car Year:%d",_year);
-//    NSLog(@"Number of Gallons in Tank: %0.2f",_fuleAmount);
-//}
 - (void)printCarInfo {
     if (self.make && self.model) {
         NSLog(@"Car Make: %@",self.make);
@@ -56,9 +47,26 @@
     }
 }
 
+//- (NSString *)carInfo {
+//    return [NSString stringWithFormat:
+//            @"Car Info\n Make: %@\n Model: %@\n year: %d",self.make ? self.make :@"Unknown Make",self.model ? self.model :@"Unknown Model",self.year];
+//}
+
 - (NSString *)carInfo {
-    return [NSString stringWithFormat:
-            @"Car Info\n Make: %@\n Model: %@\n year: %d",self.make ? self.make :@"Unknown Make",self.model ? self.model :@"Unknown Model",self.year];
+    NSString *infoLabel = NSLocalizedStringWithDefaultValue(@"CarInfoLabel", nil, [NSBundle mainBundle], @"Car Info", @"Label for the information of one car");
+    NSString *makeLabel = NSLocalizedStringWithDefaultValue(@"CarInfoMakeLabel", nil, [NSBundle mainBundle], @"Make ", @"Make Label for the make of one car");
+    NSString *modelLabel = NSLocalizedStringWithDefaultValue(@"CarInfoModelLabel", nil, [NSBundle mainBundle], @"Model", @"Model label for the model of one car");
+    NSString *yearLabel = NSLocalizedStringWithDefaultValue(@"CarInfoYearLabel", nil, [NSBundle mainBundle], @"Year", @"Year label for one car");
+    NSString *unknownMake = NSLocalizedStringWithDefaultValue(@"UnknownMakePlaceholder", nil, [NSBundle mainBundle], @"Unknown Make", @"Placeholder string for an unknown car make");
+    NSString *unknownModel = NSLocalizedStringWithDefaultValue(@"UnknownModelPlaceholder", nil, [NSBundle mainBundle], @"Unknown Model", @"Placeholder string for an unknown car model");
+    
+    return [NSString stringWithFormat:@"%@\n %@: %@\n %@: %@\n %@: %d",
+            infoLabel,makeLabel,
+            self.make ? self.make : unknownMake,
+            modelLabel,
+            self.model ? self.model : unknownModel,
+            yearLabel,self.year];
+    
 }
 @end
 

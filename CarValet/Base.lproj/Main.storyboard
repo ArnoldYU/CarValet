@@ -128,7 +128,11 @@
                     <connections>
                         <outlet property="CarInfoLabel" destination="cAY-gS-WXT" id="gCy-fR-Y8z"/>
                         <outlet property="CarNumberLabel" destination="oIc-Rr-MKO" id="91x-R2-h6J"/>
+                        <outlet property="addCarButton" destination="w6T-Cw-Qvc" id="8Mw-n2-YSH"/>
                         <outlet property="addCarView" destination="otI-1L-cSS" id="aVe-1Z-3K6"/>
+                        <outlet property="editCarButton" destination="xXJ-5x-wZJ" id="VA2-tl-wB4"/>
+                        <outlet property="nextCarButton" destination="2Ee-ji-1pL" id="vZ1-Pu-gIg"/>
+                        <outlet property="previousCarButton" destination="hT7-Kk-D2s" id="DQp-r3-5U2"/>
                         <outlet property="separatorView" destination="UaQ-oQ-akI" id="LVL-j3-0go"/>
                         <outlet property="totalCarsLabel" destination="EM0-BO-fwO" id="O8p-t8-BsT"/>
                         <outlet property="viewCarView" destination="z3c-Jv-3YZ" id="IBc-CM-X5e"/>
@@ -164,13 +168,6 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Make:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zj-11-Z7q">
                                 <rect key="frame" x="86" y="149" width="46" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Model:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xU-ib-gOj">
-                                <rect key="frame" x="79" y="192" width="53" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -225,6 +222,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Model:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xU-ib-gOj">
+                                <rect key="frame" x="79" y="192" width="53" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -236,6 +240,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="CarFuelFieldLabel" destination="weD-Hx-8O3" id="qk4-eX-deA"/>
+                        <outlet property="CarMakeFieldLabel" destination="9zj-11-Z7q" id="bmF-my-UXM"/>
+                        <outlet property="CarModelFieldLabel" destination="9xU-ib-gOj" id="aLe-D9-ZbY"/>
+                        <outlet property="CarYearFieldLabel" destination="H5k-jR-6fT" id="ncE-6G-Y6U"/>
                         <outlet property="carNumberLabel" destination="3zN-Y9-W09" id="INv-CW-W1m"/>
                         <outlet property="fuelField" destination="2JY-e0-NNp" id="1ye-d1-AiJ"/>
                         <outlet property="makeField" destination="Ey9-hU-zi3" id="kQJ-9k-80U"/>

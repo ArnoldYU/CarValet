@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A78819E91E083F2C00B23420 /* CarEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A78819E81E083F2C00B23420 /* CarEditViewController.m */; };
+		A7C55BD71E18E5900042EEC1 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A7C55BD61E18E5900042EEC1 /* Base.lproj */; };
 		A7CB06941DFEC01500EF19CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CB06931DFEC01500EF19CF /* main.m */; };
 		A7CB06971DFEC01500EF19CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CB06961DFEC01500EF19CF /* AppDelegate.m */; };
 		A7CB069A1DFEC01500EF19CF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CB06991DFEC01500EF19CF /* ViewController.m */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		A78819E71E083F2C00B23420 /* CarEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarEditViewController.h; sourceTree = "<group>"; };
 		A78819E81E083F2C00B23420 /* CarEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarEditViewController.m; sourceTree = "<group>"; };
+		A7C55BD61E18E5900042EEC1 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = CarValet/Base.lproj; sourceTree = "<group>"; };
 		A7CB068F1DFEC01500EF19CF /* CarValet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarValet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CB06931DFEC01500EF19CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A7CB06951DFEC01500EF19CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			children = (
 				A7CB06911DFEC01500EF19CF /* CarValet */,
 				A7CB06901DFEC01500EF19CF /* Products */,
+				A7C55BD61E18E5900042EEC1 /* Base.lproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +155,7 @@
 			files = (
 				A7CB06A21DFEC01500EF19CF /* LaunchScreen.storyboard in Resources */,
 				A7CB069F1DFEC01500EF19CF /* Assets.xcassets in Resources */,
+				A7C55BD71E18E5900042EEC1 /* Base.lproj in Resources */,
 				A7CB069D1DFEC01500EF19CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

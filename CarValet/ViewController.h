@@ -17,6 +17,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalCarsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *CarNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *CarInfoLabel;
+@property (weak, nonatomic) IBOutlet UIButton *addCarButton;
+@property (weak, nonatomic) IBOutlet UIButton *previousCarButton;
+@property (weak, nonatomic) IBOutlet UIButton *editCarButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextCarButton;
 
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *addCarViewPortraitConstraints;
 
