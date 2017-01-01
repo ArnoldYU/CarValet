@@ -91,12 +91,12 @@
 - (void)displayCurrentCarInfo {
     Car *currentCar;
     currentCar = [arrayOfCars objectAtIndex:displayedCarIndex];
-    //对当前显示的汽车对象进行加载。注意生产代码应该核对displayedCarIndex是否为有效索引
     self.CarInfoLabel.text = currentCar.carInfo;
-    //通过carInfo属性获得汽车的描述信息
-    
-//    [self updateLabel:self.CarNumberLabel withBaseString:@"Car Number" count:displayedCarIndex +1];
-    [self updateLabel:self.CarNumberLabel withBaseString:NSLocalizedString(@"Car Number",@"Label for the total number of current car")
+    [self updateLabel:self.CarNumberLabel withBaseString:NSLocalizedStringWithDefaultValue(@"CarNumberLabel",
+                                                                                           nil,
+                                                                                           [NSBundle mainBundle],
+                                                                                           @"Car Number",
+                                                                                           @"Label for the total number of current car")
                 count:displayedCarIndex +1];
 }
 
@@ -113,10 +113,13 @@
 }
 
 - (IBAction)newCar:(id)sender {
-    Car *newCar = [[Car alloc] init];//用默认值创建新的Car对象，并将其添加到数组中
-    [arrayOfCars addObject:newCar];//添加
-//    [self updateLabel:self.totalCarsLabel withBaseString:@"Total Cars" count:[arrayOfCars count]];
-    [self updateLabel:self.totalCarsLabel withBaseString:NSLocalizedString(@"Total Cars", @"Label for the total number of cars")
+    Car *newCar = [[Car alloc] init];
+    [arrayOfCars addObject:newCar];
+    [self updateLabel:self.totalCarsLabel withBaseString:NSLocalizedStringWithDefaultValue(@"TotalCarsLabel",
+                                                                                           nil,
+                                                                                           [NSBundle mainBundle],
+                                                                                           @"Total Cars",
+                                                                                           @"Label for the total number of cars")
                 count:[arrayOfCars count]];
 }
 
