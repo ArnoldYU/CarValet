@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  CarValet
+
+  Created by 黄彬杨 on 2017/1/1.
+  Copyright © 2017年 黄彬杨. All rights reserved.
+*/
+CFBundleDisplayName = "CarValet";

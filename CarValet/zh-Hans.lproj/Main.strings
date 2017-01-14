@@ -1,0 +1,45 @@
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "2Ee-ji-1pL"; */
+"2Ee-ji-1pL.normalTitle" = "Next";
+
+/* Class = "UILabel"; text = "Car Number:999"; ObjectID = "3zN-Y9-W09"; */
+"3zN-Y9-W09.text" = "Car Number:999";
+
+/* Class = "UINavigationItem"; title = "CarValet"; ObjectID = "5XM-3Z-MLR"; */
+"5XM-3Z-MLR.title" = "CarValet";
+
+/* Class = "UILabel"; text = "Model:"; ObjectID = "9xU-ib-gOj"; */
+"9xU-ib-gOj.text" = "Model:";
+
+/* Class = "UILabel"; text = "Make:"; ObjectID = "9zj-11-Z7q"; */
+"9zj-11-Z7q.text" = "Make:";
+
+/* Class = "UILabel"; text = "Total Car:0"; ObjectID = "EM0-BO-fwO"; */
+"EM0-BO-fwO.text" = "Total Car:0";
+
+/* Class = "UILabel"; text = "Year:"; ObjectID = "H5k-jR-6fT"; */
+"H5k-jR-6fT.text" = "Year:";
+
+/* Class = "UILabel"; text = "Car Information"; ObjectID = "cAY-gS-WXT"; */
+"cAY-gS-WXT.text" = "Car Information";
+
+/* Class = "UIButton"; normalTitle = "Previous"; ObjectID = "hT7-Kk-D2s"; */
+"hT7-Kk-D2s.normalTitle" = "Previous";
+
+/* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "i0Q-CN-PJC"; */
+"i0Q-CN-PJC.title" = "Done";
+
+/* Class = "UILabel"; text = "Current Car Number"; ObjectID = "oIc-Rr-MKO"; */
+"oIc-Rr-MKO.text" = "Current Car Number";
+
+/* Class = "UINavigationItem"; title = "Edit"; ObjectID = "sCg-Bu-n9F"; */
+"sCg-Bu-n9F.title" = "Edit";
+
+/* Class = "UIButton"; normalTitle = "New Car"; ObjectID = "w6T-Cw-Qvc"; */
+"w6T-Cw-Qvc.normalTitle" = "New Car";
+
+/* Class = "UILabel"; text = "Fuel:"; ObjectID = "weD-Hx-8O3"; */
+"weD-Hx-8O3.text" = "Fuel:";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "xXJ-5x-wZJ"; */
+"xXJ-5x-wZJ.normalTitle" = "Edit";

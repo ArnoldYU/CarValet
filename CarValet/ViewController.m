@@ -29,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = NSLocalizedStringWithDefaultValue(@"AddViewScreenTitle", nil, [NSBundle mainBundle], @"CarValet", "Title for the main app screen");
+
     NSString *local;//为当前的本地化标题设置临时字符串引用
     
     //将这个临时字符串设置为Add Car按钮的本地化标题
@@ -44,7 +46,12 @@
     local = NSLocalizedStringWithDefaultValue(@"EditCarButton", nil, [NSBundle mainBundle], @"Edit", @"Title for button to edit the current car");
     [self.editCarButton setTitle:local forState:UIControlStateNormal];
     
-    
+    local = NSLocalizedStringWithDefaultValue(@"TotalNumber", nil, [NSBundle mainBundle], @"Total Car", @"total car");
+    self.totalCarsLabel.text = local;
+    local = NSLocalizedStringWithDefaultValue(@"CurrentNumber", nil, [NSBundle mainBundle], @"Current Car", @"Current car");
+    self.CarNumberLabel.text = local;
+    local = NSLocalizedStringWithDefaultValue(@"CarInfor", nil, [NSBundle mainBundle], @"CarInfor", @"CarInfor");
+    self.CarInfoLabel.text = local;
     arrayOfCars = [[NSMutableArray alloc] init];//初始化汽车的数组为空数组
     displayedCarIndex = 0;//显示创建的第一辆汽车
     [self setupLandscapeConstraints];
@@ -55,6 +62,18 @@
 
 - (void)viewWillAppear:(BOOL)animated {//viewWillAppear:会在ViewController的视图每次即将在屏幕上显示时被调用。
     [super viewWillAppear:animated];
+    
+    NSLocaleLanguageDirection langDirection;
+    langDirection = [NSLocale characterDirectionForLanguage:[NSLocale preferredLanguages][0]];//1
+    if(langDirection == NSLocaleLanguageDirectionRightToLeft) {//2
+        self.CarInfoLabel.textAlignment = NSTextAlignmentLeft;//3
+        self.totalCarsLabel.textAlignment = NSTextAlignmentLeft;
+        
+    }
+    else{
+        self.CarInfoLabel.textAlignment = NSTextAlignmentLeft;
+        self.totalCarsLabel.textAlignment = NSTextAlignmentLeft;
+    }
     
     UIInterfaceOrientation currOrientation = [[UIApplication sharedApplication]statusBarOrientation];//找到当前设备的方向
     BOOL currIsPortrait = UIInterfaceOrientationIsPortrait(currOrientation);//当前设备方向是否为纵向
@@ -99,7 +118,7 @@
      withBaseString:(NSString*)baseString
               count:(NSInteger)theCount {
     NSString *nexText;
-    nexText = [NSString stringWithFormat:@"%@: %ld",baseString,(long)theCount];
+    nexText = [NSString localizedStringWithFormat:@"%@: %ld",baseString,(long)theCount];
     
     theLabel.text = nexText;
 }

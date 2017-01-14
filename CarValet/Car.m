@@ -58,14 +58,26 @@
     NSString *modelLabel = NSLocalizedStringWithDefaultValue(@"CarInfoModelLabel", nil, [NSBundle mainBundle], @"Model", @"Model label for the model of one car");
     NSString *yearLabel = NSLocalizedStringWithDefaultValue(@"CarInfoYearLabel", nil, [NSBundle mainBundle], @"Year", @"Year label for one car");
     NSString *unknownMake = NSLocalizedStringWithDefaultValue(@"UnknownMakePlaceholder", nil, [NSBundle mainBundle], @"Unknown Make", @"Placeholder string for an unknown car make");
+    
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];//1
+    [dateComponents setYear:self.year];//2
+    NSDate *yearDate = [[NSCalendar currentCalendar]dateFromComponents:dateComponents];//3
+    NSString *yearFormat = [NSDateFormatter dateFormatFromTemplate:@"YYYY"//4
+                                                           options:0
+                                                            locale:[NSLocale currentLocale]];
+                            NSDateFormatter *yearFormatter = [[NSDateFormatter alloc]init];
+    [yearFormatter setDateFormat:yearFormat];//5
+    
+    NSString *localYear = [yearFormatter stringFromDate:yearDate];//6
+
     NSString *unknownModel = NSLocalizedStringWithDefaultValue(@"UnknownModelPlaceholder", nil, [NSBundle mainBundle], @"Unknown Model", @"Placeholder string for an unknown car model");
     
-    return [NSString stringWithFormat:@"%@\n %@: %@\n %@: %@\n %@: %d",
+    return [NSString stringWithFormat:@"%@\n %@: %@\n %@: %@\n %@: %@",//7
             infoLabel,makeLabel,
             self.make ? self.make : unknownMake,
             modelLabel,
             self.model ? self.model : unknownModel,
-            yearLabel,self.year];
+            yearLabel,localYear];//8
     
 }
 @end

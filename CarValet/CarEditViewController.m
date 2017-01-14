@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = NSLocalizedStringWithDefaultValue(@"EditViewScreenTitle", nil, [NSBundle mainBundle], @"Edit Car", @"Title of EditView");
     NSString *labelFormat = @"%@:";//为标签设置默认的格式字符串，其中包含分隔符。这允许后续使用NSlocalizedString宏来对格式字符串进行本地化
     NSString *local;//设置一个临时变量，用于存储指向每一个本地化字符串对象的指针，然后设置UI元素要显示的字符串。可以跳过使用变量，将接卖弄字符串设置为调用NSLocalizedStringWithDefaultValue的返回值
     
@@ -32,15 +33,15 @@
     self.CarFuelFieldLabel.text = [NSString stringWithFormat:labelFormat,local];
     NSString *carNumberText;
     //格式化Car Number标签。与Add/View场景使用相同的键
-    carNumberText = [NSString stringWithFormat:@"%@: %ld",
+    carNumberText = [NSString localizedStringWithFormat:@"%@: %ld",
                      NSLocalizedString(@"CarNumberLabel", @"Label for the index number of the current car"),(long)[self.delegate carNumber]];
     self.carNumberLabel.text = carNumberText;
     
     self.currentCar = [self.delegate carToEdit];
     self.makeField.text = self.currentCar.make;
     self.modelField.text = self.currentCar.model;
-    self.yearField.text = [NSString stringWithFormat:@"%d",self.currentCar.year];
-    self.fuelField.text = [NSString stringWithFormat:@"%0.2f",self.currentCar.fuelAmount];
+    self.yearField.text = [NSString localizedStringWithFormat:@"%d",self.currentCar.year];
+    self.fuelField.text = [NSString localizedStringWithFormat:@"%0.2f",self.currentCar.fuelAmount];
     
 }
 
@@ -49,8 +50,18 @@
     
     self.currentCar.make = self.makeField.text;
     self.currentCar.model = self.modelField.text;
-    self.currentCar.year = [self.yearField.text integerValue];
-    self.currentCar.fuelAmount = [self.fuelField.text floatValue];
+    
+    NSNumberFormatter *readYear = [NSNumberFormatter new];
+    readYear.locale = [NSLocale currentLocale];
+    [readYear setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber *YearNum = [readYear numberFromString:self.yearField.text];
+    self.currentCar.year = [YearNum integerValue];
+    
+    NSNumberFormatter *readFuel = [NSNumberFormatter new];
+    readFuel.locale = [NSLocale currentLocale];
+    [readFuel setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSNumber *fuelNum = [readFuel numberFromString:self.fuelField.text];
+    self.currentCar.fuelAmount = [fuelNum floatValue];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,8 +74,18 @@
     if([segue.identifier isEqualToString:@"EditDoneSegue"]){
         self.currentCar.make = self.makeField.text;
         self.currentCar.model = self.modelField.text;
-        self.currentCar.year = [self.yearField.text integerValue];
-        self.currentCar.fuelAmount = [self.fuelField.text floatValue];
+        
+        NSNumberFormatter *readYear = [NSNumberFormatter new];
+        readYear.locale = [NSLocale currentLocale];
+        [readYear setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSNumber *YearNum = [readYear numberFromString:self.yearField.text];
+        self.currentCar.year = [YearNum integerValue];
+        
+        NSNumberFormatter *readFuel = [NSNumberFormatter new];
+        readFuel.locale = [NSLocale currentLocale];
+        [readFuel setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSNumber *fuelNum = [readFuel numberFromString:self.fuelField.text];
+        self.currentCar.fuelAmount = [fuelNum floatValue];
     }
 }
 /*
