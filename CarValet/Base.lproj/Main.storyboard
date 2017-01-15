@@ -328,8 +328,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EIb-Ru-sBi">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="EIb-Ru-sBi">
                                 <rect key="frame" x="0.0" y="115" width="375" height="552"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Bu3-ml-UDI" id="Joh-QB-uwV"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -342,9 +345,16 @@
                             <constraint firstItem="EIb-Ru-sBi" firstAttribute="top" secondItem="blR-Id-B7J" secondAttribute="bottom" constant="15" id="m9W-gL-bzz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Car Images" id="p0C-eH-1oY"/>
+                    <navigationItem key="navigationItem" title="Car Images" id="p0C-eH-1oY">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Reset Zoom" id="Qzp-3r-fWr">
+                            <connections>
+                                <action selector="resetZoom:" destination="Bu3-ml-UDI" id="2Cl-8u-yUW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="carNumberLabel" destination="blR-Id-B7J" id="nhv-BI-AXL"/>
+                        <outlet property="resetZoomButton" destination="Qzp-3r-fWr" id="obp-7W-GKr"/>
                         <outlet property="scrollView" destination="EIb-Ru-sBi" id="FcQ-y6-Utc"/>
                     </connections>
                 </viewController>
