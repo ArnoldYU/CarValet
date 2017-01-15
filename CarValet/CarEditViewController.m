@@ -31,10 +31,10 @@
     
     defaultScrollViewHeightConstraint = self.scrollviewHeightConstraints.constant;
     
-    self.formView.translatesAutoresizingMaskIntoConstraints = YES;//1
-    [self.scrollView addSubview:self.formView];//2
-    self.formView.frame = CGRectMake(0.0, 0.0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);//3
-    self.scrollView.contentSize = self.formView.bounds.size;//4
+    self.formView.translatesAutoresizingMaskIntoConstraints = YES;//1 该框架视图不具有任何相对于父视图的约束。让系统使用其当前边框创建约束
+    [self.scrollView addSubview:self.formView];//2 将表单视图添加到滚动视图
+    self.formView.frame = CGRectMake(0.0, 0.0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);//3确保表单视图和滚动视图一样宽
+    self.scrollView.contentSize = self.formView.bounds.size;//4根据需要设置滚动视图的contenSize属性
     
     
     self.title = NSLocalizedStringWithDefaultValue(@"EditViewScreenTitle", nil, [NSBundle mainBundle], @"Edit Car", @"Title of EditView");
@@ -97,17 +97,19 @@
 }
 
 - (void)keyboardDidShow:(NSNotification *)notification{
-    NSDictionary *userInfo = [notification userInfo];//1
-    NSValue *aValue = userInfo[UIKeyboardIsLocalUserInfoKey];//2
-    CGRect keyboardRect = [aValue CGRectValue];//3
+    NSDictionary *userInfo = [notification userInfo];//1获取与通知相关联的信息字典
+    NSValue *aValue = userInfo[UIKeyboardIsLocalUserInfoKey];//2查找显示的键盘的最终视图边框
+    CGRect keyboardRect = [aValue CGRectValue];//3将最终视图边框的值转为CGRect，并将坐标空间从设备主窗口转换为查看汽车分组使用的坐标系，也就是说，转换到编辑场景视图控制器的根视图的坐标系
     keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
-    CGRect intersect = CGRectIntersection(self.scrollView.frame, keyboardRect);//4
-    self.scrollviewHeightConstraints.constant -= intersect.size.height;//5
-    [self.view updateConstraints];//6
+    CGRect intersect = CGRectIntersection(self.scrollView.frame, keyboardRect);//4找到由滚动视图和键盘的交集定义的矩形。如果滚动视图和键盘不重叠，矩形是全0
+    printf("%f\n",intersect.size.height);
+    self.scrollviewHeightConstraints.constant = defaultScrollViewHeightConstraint-0.5*intersect.size.height;//5降低滚动视图的高度，者通过减少垂直的重叠量来完成，也就是相交的矩形的高度。
+    [self.view updateConstraints];//6因为滚动视图的高度常量可能已经发生改变，更新约束
     self.scrollView.contentSize = self.formView.frame.size;
 }
 
-- (void)keyboardWillHide:(NSNotification *)notification{//7
+- (void)keyboardWillHide:(NSNotification *)notification{//7当键盘关闭时，将高度约束设置为默认值，并更新约束
+    printf("1:%f/n",defaultScrollViewHeightConstraint);
     self.scrollviewHeightConstraints.constant = defaultScrollViewHeightConstraint;
     [self.view updateConstraints];
     self.scrollView.contentSize = self.formView.frame.size;
@@ -122,7 +124,7 @@
         readYear.locale = [NSLocale currentLocale];
         [readYear setNumberStyle:NSNumberFormatterDecimalStyle];
         NSNumber *YearNum = [readYear numberFromString:self.yearField.text];
-        self.currentCar.year = [YearNum integerValue];
+        self.currentCar.year = (int)[YearNum integerValue];
         
         NSNumberFormatter *readFuel = [NSNumberFormatter new];
         readFuel.locale = [NSLocale currentLocale];
