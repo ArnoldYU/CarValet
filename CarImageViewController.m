@@ -92,6 +92,27 @@
     [self.scrollView addSubview:carImageContainerView];
     self.scrollView.contentSize = carImageContainerView.bounds.size;
 }
+
+- (void)updateCarNumberLabel {
+    NSInteger carIndex = [self carIndexForPoint:self.scrollView.contentOffset];
+    
+    NSString *newText = [NSString stringWithFormat:@"Car Number: %ld",carIndex+1];
+    
+    self.carNumberLabel.text = newText;
+}
+
+- (NSInteger)carIndexForPoint:(CGPoint)thePoint {
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    
+    pageWidth *= self.scrollView.zoomScale; //1
+    
+    return (NSInteger)(thePoint.x/pageWidth);//2
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self updateCarNumberLabel];//3
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -100,6 +121,12 @@
     carImageNames = @[ @"Car/1.jpg",@"Car/2.jpg",@"Car/3.jpeg",@"Car/4.jpg",@"Car/5.jpg"];//10
     [self setupScrollContent];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear: animated];
+    
+    [self updateCarNumberLabel];
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
