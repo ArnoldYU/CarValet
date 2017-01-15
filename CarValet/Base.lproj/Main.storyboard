@@ -184,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="757.5" y="89.5"/>
+            <point key="canvasLocation" x="49" y="89"/>
         </scene>
         <!--Edit-->
         <scene sceneID="TOu-Bm-mY4">
@@ -308,7 +308,7 @@
                 </view>
                 <exit id="qoj-AG-I7d" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1594" y="89"/>
+            <point key="canvasLocation" x="1622" y="89"/>
         </scene>
         <!--Car Images-->
         <scene sceneID="xhS-bk-aGb">
@@ -331,7 +331,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="EIb-Ru-sBi">
                                 <rect key="frame" x="0.0" y="115" width="375" height="552"/>
                                 <connections>
-                                    <outlet property="delegate" destination="Bu3-ml-UDI" id="Joh-QB-uwV"/>
+                                    <outlet property="delegate" destination="Bu3-ml-UDI" id="Sb1-2S-653"/>
                                 </connections>
                             </scrollView>
                         </subviews>
@@ -360,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kto-aM-djo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="850"/>
+            <point key="canvasLocation" x="841" y="456"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SDd-S3-S0R">
@@ -378,7 +378,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qWI-1V-F2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="91.304347826086968"/>
+            <point key="canvasLocation" x="-708" y="89"/>
         </scene>
     </scenes>
 </document>

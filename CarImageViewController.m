@@ -50,6 +50,7 @@
 //    self.scrollView.contentSize = carImageContainerView.bounds.size;
 //}
 - (void)setupScrollContent{
+    
     if (carImageContainerView != nil) {
         [carImageContainerView removeFromSuperview];
     }
