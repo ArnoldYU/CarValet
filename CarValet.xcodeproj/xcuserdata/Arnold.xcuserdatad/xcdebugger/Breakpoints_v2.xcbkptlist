@@ -27,11 +27,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarValet/ViewController.m"
-            timestampString = "506068142.186158"
+            timestampString = "506080780.345174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
             landmarkName = "-willAnimateRotationToInterfaceOrientation:duration:"
             landmarkType = "7">
          </BreakpointContent>
@@ -43,11 +43,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarValet/ViewController.m"
-            timestampString = "506068142.186158"
+            timestampString = "506080780.345174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "-viewWillAppear:"
             landmarkType = "7">
          </BreakpointContent>
@@ -59,13 +59,93 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarValet/CarEditViewController.m"
-            timestampString = "506065700.717301"
+            timestampString = "506087289.273065"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "-viewWillDisappear:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CarValet/CarEditViewController.h"
+            timestampString = "506156482.260153"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "formView"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CarValet/CarEditViewController.h"
+            timestampString = "506156486.768994"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "fuelField"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CarEditViewController fuelField]"
+                  moduleName = "CarValet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Arnold/Documents/xcode%E4%BB%A3%E7%A0%81/CarValet/CarValet/CarEditViewController.h"
+                  timestampString = "506156486.979608"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CarEditViewController setFuelField:]"
+                  moduleName = "CarValet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Arnold/Documents/xcode%E4%BB%A3%E7%A0%81/CarValet/CarValet/CarEditViewController.h"
+                  timestampString = "506156486.982093"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "49">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CarValet/CarEditViewController.m"
+            timestampString = "506157294.683537"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "@implementation CarEditViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

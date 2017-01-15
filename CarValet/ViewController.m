@@ -29,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     self.title = NSLocalizedStringWithDefaultValue(@"AddViewScreenTitle", nil, [NSBundle mainBundle], @"CarValet", "Title for the main app screen");
 
     NSString *local;//为当前的本地化标题设置临时字符串引用
@@ -78,8 +80,7 @@
     UIInterfaceOrientation currOrientation = [[UIApplication sharedApplication]statusBarOrientation];//找到当前设备的方向
     BOOL currIsPortrait = UIInterfaceOrientationIsPortrait(currOrientation);//当前设备方向是否为纵向
     if((isShowingPortrait && !currIsPortrait) || (!isShowingPortrait && currIsPortrait)){//控制器的上一个方向是否与当前方向不同
-        [self willAnimateRotationToInterfaceOrientation:currOrientation
-                                               duration:0.0f];
+        [self willAnimateRotationToInterfaceOrientation:currOrientation duration:0.0f];
     }
 }
 

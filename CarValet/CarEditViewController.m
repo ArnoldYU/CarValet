@@ -13,10 +13,29 @@
 
 @end
 
-@implementation CarEditViewController
+@implementation CarEditViewController{
+    CGFloat defaultScrollViewHeightConstraint;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(keyboardDidShow:)
+                                                name:UIKeyboardDidShowNotification
+                                              object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(keyboardWillHide:)
+                                                name:UIKeyboardWillHideNotification
+                                              object:nil];
+    
+    defaultScrollViewHeightConstraint = self.scrollviewHeightConstraints.constant;
+    
+    self.formView.translatesAutoresizingMaskIntoConstraints = YES;//1
+    [self.scrollView addSubview:self.formView];//2
+    self.formView.frame = CGRectMake(0.0, 0.0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);//3
+    self.scrollView.contentSize = self.formView.bounds.size;//4
+    
     
     self.title = NSLocalizedStringWithDefaultValue(@"EditViewScreenTitle", nil, [NSBundle mainBundle], @"Edit Car", @"Title of EditView");
     NSString *labelFormat = @"%@:";//为标签设置默认的格式字符串，其中包含分隔符。这允许后续使用NSlocalizedString宏来对格式字符串进行本地化
@@ -48,6 +67,13 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:UIKeyboardDidShowNotification
+                                                 object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self
+                                                   name:UIKeyboardWillHideNotification
+                                                 object:nil];
+    
     self.currentCar.make = self.makeField.text;
     self.currentCar.model = self.modelField.text;
     
@@ -55,7 +81,7 @@
     readYear.locale = [NSLocale currentLocale];
     [readYear setNumberStyle:NSNumberFormatterDecimalStyle];
     NSNumber *YearNum = [readYear numberFromString:self.yearField.text];
-    self.currentCar.year = [YearNum integerValue];
+    self.currentCar.year = (int)[YearNum integerValue];
     
     NSNumberFormatter *readFuel = [NSNumberFormatter new];
     readFuel.locale = [NSLocale currentLocale];
@@ -68,6 +94,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     [self.delegate editedCarUpdated];
+}
+
+- (void)keyboardDidShow:(NSNotification *)notification{
+    NSDictionary *userInfo = [notification userInfo];//1
+    NSValue *aValue = userInfo[UIKeyboardIsLocalUserInfoKey];//2
+    CGRect keyboardRect = [aValue CGRectValue];//3
+    keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
+    CGRect intersect = CGRectIntersection(self.scrollView.frame, keyboardRect);//4
+    self.scrollviewHeightConstraints.constant -= intersect.size.height;//5
+    [self.view updateConstraints];//6
+    self.scrollView.contentSize = self.formView.frame.size;
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification{//7
+    self.scrollviewHeightConstraints.constant = defaultScrollViewHeightConstraint;
+    [self.view updateConstraints];
+    self.scrollView.contentSize = self.formView.frame.size;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

@@ -28,6 +28,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *modelField;
 @property (weak, nonatomic) IBOutlet UITextField *yearField;
 @property (weak, nonatomic) IBOutlet UITextField *fuelField;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *formView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollviewHeightConstraints;
 
 
 @end
