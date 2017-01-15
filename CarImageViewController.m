@@ -50,6 +50,11 @@
 //    self.scrollView.contentSize = carImageContainerView.bounds.size;
 //}
 - (void)setupScrollContent{
+    if (carImageContainerView != nil) {
+        [carImageContainerView removeFromSuperview];
+    }
+    
+    
     CGFloat scrollWidth = self.view.bounds.size.width;//1
     CGFloat totalWidth = scrollWidth * [carImageNames count];//2
     
@@ -96,6 +101,13 @@
     [self setupScrollContent];
     // Do any additional setup after loading the view.
 }
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+    [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    
+    [self setupScrollContent];
+}
+
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return carImageContainerView;
