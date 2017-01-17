@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A736A2691E2E2D4B00C9868B /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A736A2671E2E2D4B00C9868B /* AboutViewController.m */; };
+		A736A26A1E2E2D4B00C9868B /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A736A2681E2E2D4B00C9868B /* AboutViewController.xib */; };
 		A78819E91E083F2C00B23420 /* CarEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A78819E81E083F2C00B23420 /* CarEditViewController.m */; };
 		A7A062571E2B63F600D2577F /* CarImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A062561E2B63F600D2577F /* CarImageViewController.m */; };
 		A7C55BD71E18E5900042EEC1 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A7C55BD61E18E5900042EEC1 /* Base.lproj */; };
@@ -22,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A736A2661E2E2D4B00C9868B /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		A736A2671E2E2D4B00C9868B /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		A736A2681E2E2D4B00C9868B /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		A78819E71E083F2C00B23420 /* CarEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarEditViewController.h; sourceTree = "<group>"; };
 		A78819E81E083F2C00B23420 /* CarEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarEditViewController.m; sourceTree = "<group>"; };
 		A7A062511E27B24800D2577F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -96,6 +101,9 @@
 				A7D9D1651E19052E007EECE5 /* InfoPlist.strings */,
 				A7A062551E2B63F600D2577F /* CarImageViewController.h */,
 				A7A062561E2B63F600D2577F /* CarImageViewController.m */,
+				A736A2661E2E2D4B00C9868B /* AboutViewController.h */,
+				A736A2671E2E2D4B00C9868B /* AboutViewController.m */,
+				A736A2681E2E2D4B00C9868B /* AboutViewController.xib */,
 				A7CB06921DFEC01500EF19CF /* Supporting Files */,
 				A7CB06AC1DFEC17100EF19CF /* Car.h */,
 				A7CB06AD1DFEC17100EF19CF /* Car.m */,
@@ -178,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7CB06A21DFEC01500EF19CF /* LaunchScreen.storyboard in Resources */,
+				A736A26A1E2E2D4B00C9868B /* AboutViewController.xib in Resources */,
 				A7D9D1631E19052E007EECE5 /* InfoPlist.strings in Resources */,
 				A7D9D16C1E1907F7007EECE5 /* Localizable.strings in Resources */,
 				A7CB069F1DFEC01500EF19CF /* Assets.xcassets in Resources */,
@@ -196,6 +205,7 @@
 				A7CB069A1DFEC01500EF19CF /* ViewController.m in Sources */,
 				A7CB06971DFEC01500EF19CF /* AppDelegate.m in Sources */,
 				A78819E91E083F2C00B23420 /* CarEditViewController.m in Sources */,
+				A736A2691E2E2D4B00C9868B /* AboutViewController.m in Sources */,
 				A7CB06AE1DFEC17100EF19CF /* Car.m in Sources */,
 				A7CB06941DFEC01500EF19CF /* main.m in Sources */,
 				A7A062571E2B63F600D2577F /* CarImageViewController.m in Sources */,

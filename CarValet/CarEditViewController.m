@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.toolbarHidden = YES;
     
     defaultScrollViewHeightConstraint = self.scrollviewHeightConstraints.constant;
     

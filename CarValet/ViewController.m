@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Car.h"
 #import "CarEditViewController.h"
+#import "AboutViewController.h"
 
 @interface ViewController ()
 
@@ -28,7 +29,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIColor *sky = [UIColor colorWithDisplayP3Red:102.0/255.0 green:204.0/255.0 blue:255.0/255.0 alpha:1.0];
+    self.navigationController.toolbar.barTintColor = sky;
+       
     
+    self.navigationController.toolbarHidden = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.title = NSLocalizedStringWithDefaultValue(@"AddViewScreenTitle", nil, [NSBundle mainBundle], @"CarValet", "Title for the main app screen");
@@ -38,15 +43,6 @@
     //将这个临时字符串设置为Add Car按钮的本地化标题
     local = NSLocalizedStringWithDefaultValue(@"NewCarButton", nil, [NSBundle mainBundle], @"New Car", @"Button to create and add a new car");
     [self.addCarButton setTitle:local forState:UIControlStateNormal];//将Add Car按钮在默认状态下的标题设置为这个本地化字符串
-    
-    local = NSLocalizedStringWithDefaultValue(@"PreviousCarButton", nil, [NSBundle mainBundle], @"Previous", @"Title for button to go to the previous car");
-    [self.previousCarButton setTitle:local forState:UIControlStateNormal];
-    
-    local = NSLocalizedStringWithDefaultValue(@"NextCarButton", nil, [NSBundle mainBundle], @"Next", @"Title for button to go to the next car");
-    [self.nextCarButton setTitle:local forState:UIControlStateNormal];
-    
-    local = NSLocalizedStringWithDefaultValue(@"EditCarButton", nil, [NSBundle mainBundle], @"Edit", @"Title for button to edit the current car");
-    [self.editCarButton setTitle:local forState:UIControlStateNormal];
     
     local = NSLocalizedStringWithDefaultValue(@"TotalNumber", nil, [NSBundle mainBundle], @"Total Car", @"total car");
     self.totalCarsLabel.text = local;
@@ -64,7 +60,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {//viewWillAppear:会在ViewController的视图每次即将在屏幕上显示时被调用。
     [super viewWillAppear:animated];
-    
+    self.navigationController.toolbarHidden = NO;
     NSLocaleLanguageDirection langDirection;
     langDirection = [NSLocale characterDirectionForLanguage:[NSLocale preferredLanguages][0]];//1
     if(langDirection == NSLocaleLanguageDirectionRightToLeft) {//2
@@ -280,4 +276,13 @@
     }
 }
 
+- (IBAction)aboutCarValet:(id)sender {
+    AboutViewController *nextController;
+    
+    nextController = [[AboutViewController alloc]initWithNibName:@"AboutViewController"//1
+                                                          bundle:[NSBundle mainBundle]];
+    
+    nextController.title = @"About CarValet";//2
+    [self.navigationController pushViewController:nextController animated:YES];
+}
 @end

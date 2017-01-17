@@ -72,47 +72,20 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hT7-Kk-D2s">
-                                                        <rect key="frame" x="0.0" y="397" width="59" height="30"/>
-                                                        <state key="normal" title="Previous"/>
-                                                        <connections>
-                                                            <action selector="previousCar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="12l-dc-E6X"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ee-ji-1pL">
-                                                        <rect key="frame" x="327" y="397" width="32" height="30"/>
-                                                        <state key="normal" title="Next"/>
-                                                        <connections>
-                                                            <action selector="nextCar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dfV-9O-V8n"/>
-                                                        </connections>
-                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Car Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIc-Rr-MKO">
                                                         <rect key="frame" x="0.0" y="0.0" width="156" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXJ-5x-wZJ">
-                                                        <rect key="frame" x="165" y="397" width="30" height="30"/>
-                                                        <state key="normal" title="Edit"/>
-                                                        <connections>
-                                                            <segue destination="obi-qY-AOx" kind="push" identifier="EditSegue" id="Dqx-TW-y3F"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="cAY-gS-WXT" secondAttribute="trailing" id="Spg-mX-YRy"/>
-                                                    <constraint firstAttribute="bottom" secondItem="hT7-Kk-D2s" secondAttribute="bottom" id="UR8-Vm-nyI"/>
-                                                    <constraint firstAttribute="bottom" secondItem="xXJ-5x-wZJ" secondAttribute="bottom" id="Z9g-rP-hD1"/>
-                                                    <constraint firstAttribute="trailing" secondItem="2Ee-ji-1pL" secondAttribute="trailing" id="at0-7f-wFG"/>
                                                     <constraint firstItem="oIc-Rr-MKO" firstAttribute="top" secondItem="z3c-Jv-3YZ" secondAttribute="top" id="io8-eA-SEq"/>
                                                     <constraint firstItem="oIc-Rr-MKO" firstAttribute="leading" secondItem="z3c-Jv-3YZ" secondAttribute="leading" id="lA2-3E-rxW"/>
-                                                    <constraint firstAttribute="bottom" secondItem="2Ee-ji-1pL" secondAttribute="bottom" id="p5F-kG-EUo"/>
-                                                    <constraint firstItem="hT7-Kk-D2s" firstAttribute="leading" secondItem="z3c-Jv-3YZ" secondAttribute="leading" id="umk-CP-vQ8"/>
                                                     <constraint firstItem="cAY-gS-WXT" firstAttribute="top" secondItem="oIc-Rr-MKO" secondAttribute="bottom" constant="8" symbolic="YES" id="wOt-M8-MUM"/>
                                                     <constraint firstItem="cAY-gS-WXT" firstAttribute="leading" secondItem="z3c-Jv-3YZ" secondAttribute="leading" id="y6D-ID-kkI"/>
-                                                    <constraint firstItem="xXJ-5x-wZJ" firstAttribute="centerX" secondItem="z3c-Jv-3YZ" secondAttribute="centerX" id="z1s-mj-89b"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -150,13 +123,38 @@
                             <constraint firstItem="BUa-0e-eFU" firstAttribute="top" secondItem="9ux-YV-B2G" secondAttribute="top" id="sZn-D8-dky"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem tag="1" title="Item" image="sign_out.png" style="plain" id="wuc-5J-Swz">
+                            <connections>
+                                <action selector="previousCar:" destination="BYZ-38-t0r" id="LNQ-5N-e1m"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="wRc-eU-rWi"/>
+                        <barButtonItem title="Edit" id="8vQ-14-XvC">
+                            <connections>
+                                <segue destination="obi-qY-AOx" kind="push" identifier="Editsegue" id="gao-KX-Sf9"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="OM4-an-0vI"/>
+                        <barButtonItem tag="1" image="sign_in.png" style="plain" id="eog-hR-HDo">
+                            <connections>
+                                <action selector="nextCar:" destination="BYZ-38-t0r" id="9vS-0V-SXc"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="CarValet" id="5XM-3Z-MLR">
+                        <barButtonItem key="leftBarButtonItem" title="About" id="0AX-r9-oeB">
+                            <connections>
+                                <action selector="aboutCarValet:" destination="BYZ-38-t0r" id="oSD-xL-LEG"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Car Images" id="Lfp-ZQ-jXD">
                             <connections>
                                 <segue destination="Bu3-ml-UDI" kind="push" id="0ax-5u-8xo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
@@ -164,9 +162,8 @@
                         <outlet property="CarNumberLabel" destination="oIc-Rr-MKO" id="91x-R2-h6J"/>
                         <outlet property="addCarButton" destination="w6T-Cw-Qvc" id="8Mw-n2-YSH"/>
                         <outlet property="addCarView" destination="otI-1L-cSS" id="aVe-1Z-3K6"/>
-                        <outlet property="editCarButton" destination="xXJ-5x-wZJ" id="VA2-tl-wB4"/>
-                        <outlet property="nextCarButton" destination="2Ee-ji-1pL" id="vZ1-Pu-gIg"/>
-                        <outlet property="previousCarButton" destination="hT7-Kk-D2s" id="DQp-r3-5U2"/>
+                        <outlet property="nextCarButton" destination="eog-hR-HDo" id="zuB-C2-Sz2"/>
+                        <outlet property="previousCarButton" destination="wuc-5J-Swz" id="z9L-pn-L9l"/>
                         <outlet property="separatorView" destination="UaQ-oQ-akI" id="LVL-j3-0go"/>
                         <outlet property="totalCarsLabel" destination="EM0-BO-fwO" id="O8p-t8-BsT"/>
                         <outlet property="viewCarView" destination="z3c-Jv-3YZ" id="IBc-CM-X5e"/>
@@ -329,7 +326,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="EIb-Ru-sBi">
-                                <rect key="frame" x="0.0" y="115" width="375" height="552"/>
+                                <rect key="frame" x="0.0" y="115" width="375" height="508"/>
                                 <connections>
                                     <outlet property="delegate" destination="Bu3-ml-UDI" id="Sb1-2S-653"/>
                                 </connections>
@@ -365,13 +362,19 @@
         <!--Navigation Controller-->
         <scene sceneID="SDd-S3-S0R">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nKX-MH-ick" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="nKX-MH-ick" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aPi-24-jX3">
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aPi-24-jX3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="TN0-TU-60P">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8Fg-8B-5gd"/>
                     </connections>
@@ -381,4 +384,8 @@
             <point key="canvasLocation" x="-708" y="89"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sign_in.png" width="32" height="32"/>
+        <image name="sign_out.png" width="32" height="32"/>
+    </resources>
 </document>

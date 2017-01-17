@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIColor *Mocha = [UIColor colorWithDisplayP3Red:128.0/255 green:64.0/255.0 blue:0/255.0 alpha:1.0];//1
+    
+    [[UIButton appearance]setTitleColor:Mocha forState:UIControlStateNormal];//2
+    [[UIBarButtonItem appearance] setTintColor:Mocha];
     return YES;
 }
 
