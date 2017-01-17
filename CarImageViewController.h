@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *carNumberLabel;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *resetZoomButton;
+@property (weak, nonatomic) IBOutlet UIButton *resetZoomButton;
 
 - (IBAction)resetZoom:(id)sender;
 

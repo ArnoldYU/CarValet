@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addCarButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *previousCarButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextCarButton;
-- (IBAction)aboutCarValet:(id)sender;
+
 
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *addCarViewPortraitConstraints;
 

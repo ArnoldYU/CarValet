@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AboutViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,18 @@
     
     [[UIButton appearance]setTitleColor:Mocha forState:UIControlStateNormal];//2
     [[UIBarButtonItem appearance] setTintColor:Mocha];
+    
+    UITabBarController *tabBarController = (UITabBarController*)self.window.rootViewController;//1
+    //2
+    AboutViewController *aboutViewController = [[AboutViewController alloc]initWithNibName:@"AboutViewController"
+                                                                                    bundle:[NSBundle mainBundle]];
+    UITabBarItem *aboutItem = [[UITabBarItem alloc]initWithTitle:@"About" //3
+                                                           image:[UIImage imageNamed:@"tag"]
+                                                             tag:0];
+    [aboutViewController setTabBarItem:aboutItem];//4
+    NSMutableArray *currentItems = [NSMutableArray arrayWithArray:tabBarController.viewControllers];//5
+    [currentItems addObject:aboutViewController];//6
+    [tabBarController setViewControllers:currentItems animated:NO];//7
     return YES;
 }
 

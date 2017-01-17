@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nKX-MH-ick">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bw5-dI-h70">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -142,18 +142,7 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="CarValet" id="5XM-3Z-MLR">
-                        <barButtonItem key="leftBarButtonItem" title="About" id="0AX-r9-oeB">
-                            <connections>
-                                <action selector="aboutCarValet:" destination="BYZ-38-t0r" id="oSD-xL-LEG"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Car Images" id="Lfp-ZQ-jXD">
-                            <connections>
-                                <segue destination="Bu3-ml-UDI" kind="push" id="0ax-5u-8xo"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="CarValet" id="5XM-3Z-MLR"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
@@ -181,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="49" y="89"/>
+            <point key="canvasLocation" x="988" y="88.605697151424295"/>
         </scene>
         <!--Edit-->
         <scene sceneID="TOu-Bm-mY4">
@@ -305,7 +294,7 @@
                 </view>
                 <exit id="qoj-AG-I7d" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1622" y="89"/>
+            <point key="canvasLocation" x="1690" y="89"/>
         </scene>
         <!--Car Images-->
         <scene sceneID="xhS-bk-aGb">
@@ -320,20 +309,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Number:999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blR-Id-B7J">
-                                <rect key="frame" x="16" y="79" width="135" height="21"/>
+                                <rect key="frame" x="16" y="35" width="135" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="EIb-Ru-sBi">
-                                <rect key="frame" x="0.0" y="115" width="375" height="508"/>
+                                <rect key="frame" x="0.0" y="71" width="375" height="547"/>
                                 <connections>
                                     <outlet property="delegate" destination="Bu3-ml-UDI" id="Sb1-2S-653"/>
                                 </connections>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xn-Et-N0h">
+                                <rect key="frame" x="276" y="28" width="83" height="30"/>
+                                <state key="normal" title="Reset Zoom"/>
+                                <connections>
+                                    <action selector="resetZoom:" destination="Bu3-ml-UDI" eventType="touchUpInside" id="PID-D6-9Qs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5xn-Et-N0h" firstAttribute="trailing" secondItem="GXT-WE-td9" secondAttribute="trailingMargin" id="1Ag-Iz-ONx"/>
+                            <constraint firstItem="5xn-Et-N0h" firstAttribute="top" secondItem="zWC-yG-gPn" secondAttribute="bottom" constant="8" symbolic="YES" id="2sF-9u-HW1"/>
                             <constraint firstItem="EIb-Ru-sBi" firstAttribute="leading" secondItem="GXT-WE-td9" secondAttribute="leading" id="LBi-IT-ddh"/>
                             <constraint firstAttribute="trailing" secondItem="EIb-Ru-sBi" secondAttribute="trailing" id="cMi-td-8lL"/>
                             <constraint firstItem="blR-Id-B7J" firstAttribute="top" secondItem="zWC-yG-gPn" secondAttribute="bottom" constant="15" id="dsh-0K-Z26"/>
@@ -342,30 +340,26 @@
                             <constraint firstItem="EIb-Ru-sBi" firstAttribute="top" secondItem="blR-Id-B7J" secondAttribute="bottom" constant="15" id="m9W-gL-bzz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Car Images" id="p0C-eH-1oY">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Reset Zoom" id="Qzp-3r-fWr">
-                            <connections>
-                                <action selector="resetZoom:" destination="Bu3-ml-UDI" id="2Cl-8u-yUW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Car Images" image="image_32x32" id="GuV-8b-EDb"/>
+                    <navigationItem key="navigationItem" title="Car Images" id="p0C-eH-1oY"/>
                     <connections>
                         <outlet property="carNumberLabel" destination="blR-Id-B7J" id="nhv-BI-AXL"/>
-                        <outlet property="resetZoomButton" destination="Qzp-3r-fWr" id="obp-7W-GKr"/>
+                        <outlet property="resetZoomButton" destination="5xn-Et-N0h" id="C96-fP-ZCo"/>
                         <outlet property="scrollView" destination="EIb-Ru-sBi" id="FcQ-y6-Utc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kto-aM-djo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="456"/>
+            <point key="canvasLocation" x="154" y="832"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--CarValet-->
         <scene sceneID="SDd-S3-S0R">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="nKX-MH-ick" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="CarValet" image="grandeur-car-10" id="eo4-7R-aJH"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aPi-24-jX3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aPi-24-jX3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -381,10 +375,30 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qWI-1V-F2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-708" y="89"/>
+            <point key="canvasLocation" x="231.19999999999999" y="88.605697151424295"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Pcz-uT-GSw">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bw5-dI-h70" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="DzJ-6P-VRI">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nKX-MH-ick" kind="relationship" relationship="viewControllers" id="SGZ-0N-ViI"/>
+                        <segue destination="Bu3-ml-UDI" kind="relationship" relationship="viewControllers" id="8ua-tH-OdJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Rd-yu-DDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-708" y="88.605697151424295"/>
         </scene>
     </scenes>
     <resources>
+        <image name="grandeur-car-10" width="32" height="32"/>
+        <image name="image_32x32" width="32" height="32"/>
         <image name="sign_in.png" width="32" height="32"/>
         <image name="sign_out.png" width="32" height="32"/>
     </resources>

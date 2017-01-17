@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "Car.h"
 #import "CarEditViewController.h"
-#import "AboutViewController.h"
+
 
 @interface ViewController ()
 
@@ -276,13 +276,5 @@
     }
 }
 
-- (IBAction)aboutCarValet:(id)sender {
-    AboutViewController *nextController;
-    
-    nextController = [[AboutViewController alloc]initWithNibName:@"AboutViewController"//1
-                                                          bundle:[NSBundle mainBundle]];
-    
-    nextController.title = @"About CarValet";//2
-    [self.navigationController pushViewController:nextController animated:YES];
-}
+
 @end
