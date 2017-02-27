@@ -19,7 +19,7 @@
 @property NSString *make;
 @property NSString *model;
 @property float fuelAmount;
-
+@property NSDate* dateCreated;
 
 - (id)initWithMake:(NSString*)make
             model:(NSString*)model
