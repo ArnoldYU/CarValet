@@ -24,7 +24,7 @@
     arrayOfCars = [NSMutableArray new];
     
     [self newCar:nil];
-    
+    self.navigationItem.leftBarButtonItem = self.editButton;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -72,7 +72,7 @@
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-    return (indexPath.row % 2 != 0);
+    return YES;
 }
 
 
@@ -114,4 +114,12 @@
 }
 */
 
+- (IBAction)editTableView:(id)sender {
+    BOOL startEdit = (sender == self.editButton); //1 如果发送这条消息的是编辑按钮，那么开始编辑
+    
+    UIBarButtonItem *nextButton = (startEdit) ? self.doneButton :self.editButton; //2 下一个要显示的按钮是当前没有显示的那个，就是交替出现done和edit
+    
+    [self.navigationItem setLeftBarButtonItem:nextButton animated:YES];//3为新的导航栏按钮添加动画
+    [self.tableView setEditing:startEdit animated:YES];//4让表视图动画过度到编辑或非编辑状态
+}
 @end

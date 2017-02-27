@@ -357,7 +357,7 @@
             <objects>
                 <tableViewController id="bg8-aT-Xqm" customClass="CarTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CarCell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5mK-TD-ArZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -365,18 +365,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p0K-9c-SsL" id="qHx-tL-gm1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tZD-Hc-5OV">
-                                            <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="11" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nJa-xY-Vcc">
-                                            <rect key="frame" x="327" y="17" width="33" height="14.5"/>
+                                            <rect key="frame" x="327" y="16" width="33" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -398,8 +398,23 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="doneButton" destination="v6K-kY-H0d" id="0eD-e0-adL"/>
+                        <outlet property="editButton" destination="Nxg-OA-lAI" id="fTk-7p-mGN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uCc-Jh-zGJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Done" id="v6K-kY-H0d">
+                    <connections>
+                        <action selector="editTableView:" destination="bg8-aT-Xqm" id="tjx-om-k35"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem title="Edit" id="Nxg-OA-lAI">
+                    <connections>
+                        <action selector="editTableView:" destination="bg8-aT-Xqm" id="ic4-u1-m4n"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="1689" y="-694"/>
         </scene>
