@@ -7,6 +7,7 @@
 //
 
 #import "CarTableViewController.h"
+#import "ViewCarTableViewController.h"
 #import "Car.h"
 #import "CarTableVIewCell.h"
 
@@ -18,6 +19,14 @@
     NSMutableArray *arrayOfCars;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"ViewSegue"]) {
+        ViewCarTableViewController *nextController;
+        nextController = segue.destinationViewController;
+        NSInteger index = [self.tableView indexPathForSelectedRow].row;
+        nextController.myCar = arrayOfCars[index];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -31,6 +40,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -60,9 +71,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CarCell" forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"CarCell";
     
-    // Configure the cell...
+    CarTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.myCar = arrayOfCars[indexPath.row];
+    [cell configureCell];
     
     return cell;
 }

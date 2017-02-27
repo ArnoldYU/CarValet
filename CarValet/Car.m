@@ -16,7 +16,7 @@
     if (self != nil) {//确保self实际已经初始化了，如果已经初始化了，这个对象的剩余部分将被创建
         _year = 1900;//默认值设置为1900
         _fuleAmount = 0.0f;//默认值设置为0.0f。这里的f可以去掉，但是这是为了告诉编译器这是fload值，而不是其他类型的浮点值，建议写
-        [NSDate date];
+        _dateCreated = [NSDate date];
     }
     return self;//返回self
     //到此为止，Car对象已经被初始化了
@@ -33,6 +33,7 @@
         _model = [model copy];
         _year = year;
         _fuleAmount = fuelAmount;
+        _dateCreated = [NSDate date];
     }
     return self;
 }
