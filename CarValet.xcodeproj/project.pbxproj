@@ -10,6 +10,7 @@
 		A703D99D1E63CADE0043F1CF /* CarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A703D99C1E63CADE0043F1CF /* CarTableViewController.m */; };
 		A703D9A01E63CC880043F1CF /* CarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A703D99F1E63CC880043F1CF /* CarTableViewCell.m */; };
 		A716066E1E642DF7000B22A3 /* ViewCarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A716066D1E642DF7000B22A3 /* ViewCarTableViewController.m */; };
+		A71606711E643CB0000B22A3 /* MakeModelEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71606701E643CB0000B22A3 /* MakeModelEditViewController.m */; };
 		A736A2691E2E2D4B00C9868B /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A736A2671E2E2D4B00C9868B /* AboutViewController.m */; };
 		A736A26A1E2E2D4B00C9868B /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A736A2681E2E2D4B00C9868B /* AboutViewController.xib */; };
 		A78819E91E083F2C00B23420 /* CarEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A78819E81E083F2C00B23420 /* CarEditViewController.m */; };
@@ -33,6 +34,10 @@
 		A703D99F1E63CC880043F1CF /* CarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarTableViewCell.m; sourceTree = "<group>"; };
 		A716066C1E642DF7000B22A3 /* ViewCarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCarTableViewController.h; sourceTree = "<group>"; };
 		A716066D1E642DF7000B22A3 /* ViewCarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCarTableViewController.m; sourceTree = "<group>"; };
+		A716066F1E643CB0000B22A3 /* MakeModelEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeModelEditViewController.h; sourceTree = "<group>"; };
+		A71606701E643CB0000B22A3 /* MakeModelEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeModelEditViewController.m; sourceTree = "<group>"; };
+		A732E0611E65A70E00DB00C0 /* MakeModelEditProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeModelEditProtocol.h; sourceTree = "<group>"; };
+		A732E0621E65BCBB00DB00C0 /* ViewCarProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCarProtocol.h; sourceTree = "<group>"; };
 		A736A2661E2E2D4B00C9868B /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		A736A2671E2E2D4B00C9868B /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		A736A2681E2E2D4B00C9868B /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
@@ -104,6 +109,9 @@
 				A7CB06981DFEC01500EF19CF /* ViewController.h */,
 				A7CB06991DFEC01500EF19CF /* ViewController.m */,
 				A7CB069B1DFEC01500EF19CF /* Main.storyboard */,
+				A732E0611E65A70E00DB00C0 /* MakeModelEditProtocol.h */,
+				A716066F1E643CB0000B22A3 /* MakeModelEditViewController.h */,
+				A71606701E643CB0000B22A3 /* MakeModelEditViewController.m */,
 				A7CB069E1DFEC01500EF19CF /* Assets.xcassets */,
 				A7CB06A01DFEC01500EF19CF /* LaunchScreen.storyboard */,
 				A7CB06A31DFEC01500EF19CF /* Info.plist */,
@@ -123,6 +131,7 @@
 				A703D99C1E63CADE0043F1CF /* CarTableViewController.m */,
 				A716066C1E642DF7000B22A3 /* ViewCarTableViewController.h */,
 				A716066D1E642DF7000B22A3 /* ViewCarTableViewController.m */,
+				A732E0621E65BCBB00DB00C0 /* ViewCarProtocol.h */,
 				A703D99E1E63CC880043F1CF /* CarTableViewCell.h */,
 				A703D99F1E63CC880043F1CF /* CarTableViewCell.m */,
 			);
@@ -224,6 +233,7 @@
 				A736A2691E2E2D4B00C9868B /* AboutViewController.m in Sources */,
 				A7CB06AE1DFEC17100EF19CF /* Car.m in Sources */,
 				A7CB06941DFEC01500EF19CF /* main.m in Sources */,
+				A71606711E643CB0000B22A3 /* MakeModelEditViewController.m in Sources */,
 				A716066E1E642DF7000B22A3 /* ViewCarTableViewController.m in Sources */,
 				A703D9A01E63CC880043F1CF /* CarTableViewCell.m in Sources */,
 				A7A062571E2B63F600D2577F /* CarImageViewController.m in Sources */,

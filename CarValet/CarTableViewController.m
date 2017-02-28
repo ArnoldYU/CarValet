@@ -23,8 +23,9 @@
     if([segue.identifier isEqualToString:@"ViewSegue"]) {
         ViewCarTableViewController *nextController;
         nextController = segue.destinationViewController;
-        NSInteger index = [self.tableView indexPathForSelectedRow].row;
-        nextController.myCar = arrayOfCars[index];
+//        NSInteger index = [self.tableView indexPathForSelectedRow].row;
+//        nextController.myCar = arrayOfCars[index];
+        nextController.delegate = self;
     }
 }
 - (void)viewDidLoad {
@@ -69,7 +70,11 @@
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];//3 让表视图在新的索引路径上插入一个对象。这回事表视图调用数据源来查找第0表格段第0行的数据——也就是数组的第一个元素。因为数组已经被更新，所以新的单元格会被返回
     //[self.tableView reloadData];
 }
-
+- (Car *)carToView {
+    NSInteger index = [self.tableView indexPathForSelectedRow].row;
+    
+    return arrayOfCars[index];
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"CarCell";
     
@@ -80,7 +85,11 @@
     return cell;
 }
 
-
+- (void)carViewDone:(BOOL)dataChanged {
+    if (dataChanged) {
+        [self.tableView reloadData];
+    }
+}
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

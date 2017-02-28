@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ViewCarProtocol.h"
 @class Car;
 
 @interface CarTableViewController : UITableViewController
+<ViewCarProtocol>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;

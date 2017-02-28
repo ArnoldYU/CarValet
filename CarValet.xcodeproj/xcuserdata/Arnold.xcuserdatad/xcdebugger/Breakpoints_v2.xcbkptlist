@@ -251,11 +251,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarValet/CarTableViewController.m"
-            timestampString = "509883195.456868"
+            timestampString = "509984515.299957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "-newCar:"
             landmarkType = "7">
          </BreakpointContent>
@@ -299,11 +299,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CarValet/ViewCarTableViewController.h"
-            timestampString = "509883503.808962"
+            timestampString = "509984515.299957"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "timeLabel"
             landmarkType = "24">
             <Locations>
