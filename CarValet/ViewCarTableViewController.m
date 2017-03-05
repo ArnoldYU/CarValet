@@ -8,6 +8,7 @@
 
 #import "ViewCarTableViewController.h"
 #import "MakeModelEditViewController.h"
+#import "YearEditViewController.h"
 #include "Car.h"
 
 #define kCurrentEditMake 0
@@ -42,6 +43,11 @@
         nextController = segue.destinationViewController;
         nextController.delegate = self;
         currentEdutType = kCurrentEditModel;
+    } else if ([segue.identifier isEqualToString:@"YearEditSegue"]) {
+        YearEditViewController *nextController;
+        nextController = segue.destinationViewController;
+        
+        nextController.delegate = self;
     }
 }
 
@@ -78,6 +84,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger)editYearValue {
+    return self.myCar.year;
+}
+
+- (void)editYearDone:(NSInteger)yearValue {
+    if(yearValue != self.myCar.year) {
+        self.myCar.year = yearValue;
+        
+        self.yearLabel.text = [NSString stringWithFormat:@"%d",self.myCar.year];
+        
+        dataUpdated = YES;
+    }
+}
 #pragma mark - Table view data source
 
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -17,6 +17,7 @@
 
 @implementation CarTableViewController{
     NSMutableArray *arrayOfCars;
+    NSIndexPath *currentViewCarPath;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -71,9 +72,11 @@
     //[self.tableView reloadData];
 }
 - (Car *)carToView {
-    NSInteger index = [self.tableView indexPathForSelectedRow].row;
+//    NSInteger index = [self.tableView indexPathForSelectedRow].row;
+    currentViewCarPath = [self.tableView indexPathForSelectedRow];
     
-    return arrayOfCars[index];
+//    return arrayOfCars[index];
+    return arrayOfCars[currentViewCarPath.row];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"CarCell";
@@ -86,9 +89,13 @@
 }
 
 - (void)carViewDone:(BOOL)dataChanged {
+//    if (dataChanged) {
+//        [self.tableView reloadData];
+//    }
     if (dataChanged) {
-        [self.tableView reloadData];
+        [self.tableView reloadRowsAtIndexPaths:@[currentViewCarPath] withRowAnimation:YES];
     }
+    currentViewCarPath = nil;
 }
 
 // Override to support conditional editing of the table view.

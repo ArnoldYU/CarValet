@@ -25,6 +25,7 @@
 		A7CB06AE1DFEC17100EF19CF /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CB06AD1DFEC17100EF19CF /* Car.m */; };
 		A7D9D1631E19052E007EECE5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7D9D1651E19052E007EECE5 /* InfoPlist.strings */; };
 		A7D9D16C1E1907F7007EECE5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7D9D16E1E1907F7007EECE5 /* Localizable.strings */; };
+		A7FCB5701E685BEC0047FD03 /* YearEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7FCB56F1E685BEC0047FD03 /* YearEditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +70,10 @@
 		A7D9D16F1E1907F9007EECE5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A7D9D1701E19082C007EECE5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A7D9D1711E19136F007EECE5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A7E5DBCB1E6C21B600D9B04B /* YearEditProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YearEditProtocol.h; sourceTree = "<group>"; };
 		A7FAC4951E1148490033903F /* CarEditViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CarEditViewControllerProtocol.h; path = ../CarEditViewControllerProtocol.h; sourceTree = "<group>"; };
+		A7FCB56E1E685BEC0047FD03 /* YearEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YearEditViewController.h; sourceTree = "<group>"; };
+		A7FCB56F1E685BEC0047FD03 /* YearEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YearEditViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,9 @@
 				A732E0621E65BCBB00DB00C0 /* ViewCarProtocol.h */,
 				A703D99E1E63CC880043F1CF /* CarTableViewCell.h */,
 				A703D99F1E63CC880043F1CF /* CarTableViewCell.m */,
+				A7FCB56E1E685BEC0047FD03 /* YearEditViewController.h */,
+				A7FCB56F1E685BEC0047FD03 /* YearEditViewController.m */,
+				A7E5DBCB1E6C21B600D9B04B /* YearEditProtocol.h */,
 			);
 			path = CarValet;
 			sourceTree = "<group>";
@@ -231,6 +238,7 @@
 				A7CB06971DFEC01500EF19CF /* AppDelegate.m in Sources */,
 				A78819E91E083F2C00B23420 /* CarEditViewController.m in Sources */,
 				A736A2691E2E2D4B00C9868B /* AboutViewController.m in Sources */,
+				A7FCB5701E685BEC0047FD03 /* YearEditViewController.m in Sources */,
 				A7CB06AE1DFEC17100EF19CF /* Car.m in Sources */,
 				A7CB06941DFEC01500EF19CF /* main.m in Sources */,
 				A71606711E643CB0000B22A3 /* MakeModelEditViewController.m in Sources */,

@@ -14,7 +14,7 @@
     //在超类（NSObject）上调用init方法，这保证了NSObject要求的任何初始化逻辑，在特定于Car类的初始化逻辑之前执行完毕
     self = [super init];
     if (self != nil) {//确保self实际已经初始化了，如果已经初始化了，这个对象的剩余部分将被创建
-        _year = 1900;//默认值设置为1900
+        _year = kModelTYear;//默认值设置为1900
         _fuleAmount = 0.0f;//默认值设置为0.0f。这里的f可以去掉，但是这是为了告诉编译器这是fload值，而不是其他类型的浮点值，建议写
         _dateCreated = [NSDate date];
     }

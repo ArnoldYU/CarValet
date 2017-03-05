@@ -294,7 +294,7 @@
                 </view>
                 <exit id="qoj-AG-I7d" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="520"/>
+            <point key="canvasLocation" x="1777" y="520"/>
         </scene>
         <!--Car Images-->
         <scene sceneID="xhS-bk-aGb">
@@ -351,6 +351,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kto-aM-djo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="154" y="832"/>
+        </scene>
+        <!--Year Edit View Controller-->
+        <scene sceneID="566-wg-iYK">
+            <objects>
+                <viewController id="VVz-sS-eCb" customClass="YearEditViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o0Z-oh-F1f"/>
+                        <viewControllerLayoutGuide type="bottom" id="dBY-Bz-6MS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S6z-ge-AkJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hwy-vj-Vqv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="GbA-Ax-3gI">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="NdE-f9-TbQ">
+                                            <connections>
+                                                <action selector="editCancel:" destination="VVz-sS-eCb" id="P0H-g6-VEb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="gL9-yA-iwV">
+                                            <connections>
+                                                <action selector="editDone:" destination="VVz-sS-eCb" id="VWe-nD-Wh7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1A-pw-Kal">
+                                <rect key="frame" x="0.0" y="443" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="VVz-sS-eCb" id="EMp-WF-WX9"/>
+                                    <outlet property="delegate" destination="VVz-sS-eCb" id="T88-co-LQw"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="S1A-pw-Kal" secondAttribute="trailing" id="56Q-vd-Mm9"/>
+                            <constraint firstItem="S1A-pw-Kal" firstAttribute="leading" secondItem="S6z-ge-AkJ" secondAttribute="leading" id="DiH-hY-RUH"/>
+                            <constraint firstItem="Hwy-vj-Vqv" firstAttribute="top" secondItem="S6z-ge-AkJ" secondAttribute="top" symbolic="YES" id="S8A-Ry-VgY"/>
+                            <constraint firstItem="dBY-Bz-6MS" firstAttribute="top" secondItem="S1A-pw-Kal" secondAttribute="bottom" constant="8" symbolic="YES" id="gyT-oZ-bnv"/>
+                            <constraint firstAttribute="trailing" secondItem="Hwy-vj-Vqv" secondAttribute="trailing" id="him-2H-RyN"/>
+                            <constraint firstItem="Hwy-vj-Vqv" firstAttribute="leading" secondItem="S6z-ge-AkJ" secondAttribute="leading" id="inv-rB-P4b"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editPicker" destination="S1A-pw-Kal" id="o3i-5i-JYR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OHj-OQ-1Ys" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2769" y="-688"/>
         </scene>
         <!--CarValet-->
         <scene sceneID="Hrk-bh-yrE">
@@ -472,15 +528,15 @@
                                             <segue destination="uvK-mQ-ebq" kind="modal" identifier="ModelEditSegue" id="hwg-jp-tBH"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Ruj-yp-a1y" style="IBUITableViewCellStyleDefault" id="Yne-Ro-E6F">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Ruj-yp-a1y" style="IBUITableViewCellStyleDefault" id="Yne-Ro-E6F">
                                         <rect key="frame" x="0.0" y="144" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yne-Ro-E6F" id="ao1-IL-vg1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ruj-yp-a1y">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -488,6 +544,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="VVz-sS-eCb" kind="modal" identifier="YearEditSegue" id="7Ov-fd-iY1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -497,7 +556,7 @@
                                         <rect key="frame" x="0.0" y="245" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sn7-E6-3GA" id="UVX-ti-n98">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Fuel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xiw-nd-qu3">
@@ -518,7 +577,7 @@
                                         <rect key="frame" x="0.0" y="346" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Our-5W-Ams" id="kcC-eU-O0I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R16-4L-Shf">
@@ -535,7 +594,7 @@
                                         <rect key="frame" x="0.0" y="390" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zn8-pi-C4b" id="m6B-qF-BdX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OrF-LE-uaC">
@@ -569,7 +628,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oic-uZ-oWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="-193"/>
+            <point key="canvasLocation" x="2022" y="-689"/>
         </scene>
         <!--Make Model Edit View Controller-->
         <scene sceneID="bOH-2n-0FH">
@@ -610,7 +669,7 @@
                                 <rect key="frame" x="16" y="93" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -635,7 +694,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sc5-Cf-TyW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2492" y="-194"/>
+            <point key="canvasLocation" x="2769" y="89"/>
         </scene>
         <!--CarValet-->
         <scene sceneID="SDd-S3-S0R">

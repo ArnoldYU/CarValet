@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "MakeModelEditProtocol.h"
+#import "YearEditProtocol.h"
 #import "ViewCarProtocol.h"
 @class Car;
 @interface ViewCarTableViewController : UITableViewController
-<MakeModelEditProtocol, UINavigationControllerDelegate>
+<MakeModelEditProtocol, UINavigationControllerDelegate,YearEditProtocol>
 
 @property (weak, nonatomic) IBOutlet UILabel *makeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *modelLabel;

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define kModelTYear 1908
+
 @interface Car : NSObject {
     int _year;
     NSString *_make;

@@ -22,6 +22,7 @@
     self.editLabel.text = [self.delegate editLabelText];
     self.editField.text = [self.delegate editFieldText];
     self.editField.placeholder = [self.delegate editFieldPlaceholderText];
+    [self.editField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
