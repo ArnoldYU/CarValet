@@ -10,18 +10,23 @@
 #import "ViewCarTableViewController.h"
 #import "Car.h"
 #import "CarTableVIewCell.h"
+#import "AppDelegate.h"
+#import "CDCar+CoreDataProperties.h"
 
 @interface CarTableViewController ()
 
 @end
 
 @implementation CarTableViewController{
-    NSMutableArray *arrayOfCars;
+    NSArray *arrayOfCars;
     NSIndexPath *currentViewCarPath;
+    NSManagedObjectContext *managedContextObject;
+    NSFetchRequest *fetchRequest;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"ViewSegue"]) {
+        
         ViewCarTableViewController *nextController;
         nextController = segue.destinationViewController;
 //        NSInteger index = [self.tableView indexPathForSelectedRow].row;
@@ -31,16 +36,25 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     
-    arrayOfCars = [NSMutableArray new];
+    managedContextObject = appDelegate.managedObjectContext;
+    NSError *error=nil;
+    fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"CDCar"];//1 创建查找类CDCar的所有实体的抓取请求。其他方法和属性可用于添加过滤、排序，甚至批量加载对象
+    arrayOfCars = [managedContextObject executeFetchRequest:fetchRequest error:&error];//2将汽车数组设置为上下文中所有符合抓取请求标准的托管对象——在此处为所有汽车
     
-    [self newCar:nil];
+    if (error != nil) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]); //3 读取对象时出错。将日志打印到文件对学习游泳。但更好的办法是如果个能的话，尽力从错误中恢复；如果无法恢复的话，将当前情况通知用户并告诉用户可以尝试的解决办法
+        abort();//4对abourt()的调用来自系统提供的模板。它所做的所有事情就是创建崩溃日志并且终止程序
+    }
+    
     self.navigationItem.leftBarButtonItem = self.editButton;
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+//    arrayOfCars = [NSMutableArray new];
+//    
+//    [self newCar:nil];
+//    self.navigationItem.leftBarButtonItem = self.editButton;
+    
 }
 
 
@@ -63,15 +77,32 @@
 }
 
 - (IBAction)newCar:(id)sender {
-    Car *newCar = [Car new];
+    NSLog(@"here");
+    CDCar *newCar=[NSEntityDescription insertNewObjectForEntityForName:@"CDCar"
+                                                inManagedObjectContext:managedContextObject];//1 在当前的托管对象上下文中创建新的汽车对象
     
-    [arrayOfCars insertObject:newCar atIndex:0];//1 将汽车插入到数组的前边
+    newCar.dateCreated = [NSDate date];//2初始化汽车的创建日期
+    
+    NSError *error;
+    arrayOfCars = [managedContextObject executeFetchRequest:fetchRequest
+                                                      error:&error];//3重新生成当前的汽车数组，已包含新的汽车对象
+    
+    if(error != nil) {
+        NSLog(@"Unresolved error %@, %@",error,[error userInfo]);
+        abort();
+    }
+    
+    
+    
+//    Car *newCar = [Car new];
+//    
+//    [arrayOfCars insertObject:newCar atIndex:0];//1 将汽车插入到数组的前边
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];//2 创建一个NSindexPath对象来指定新单元格的位置——他的section和row
     
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];//3 让表视图在新的索引路径上插入一个对象。这回事表视图调用数据源来查找第0表格段第0行的数据——也就是数组的第一个元素。因为数组已经被更新，所以新的单元格会被返回
-    //[self.tableView reloadData];
+//    //[self.tableView reloadData];
 }
-- (Car *)carToView {
+- (CDCar *)carToView {
 //    NSInteger index = [self.tableView indexPathForSelectedRow].row;
     currentViewCarPath = [self.tableView indexPathForSelectedRow];
     
@@ -108,11 +139,17 @@
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [arrayOfCars removeObjectAtIndex:indexPath.row];
+        [managedContextObject deleteObject:arrayOfCars[indexPath.row]];//1让托管对象上下文来删除CDCar对象
+        NSError *error = nil;
+        arrayOfCars = [managedContextObject executeFetchRequest:fetchRequest error:&error];
         
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        if(error != nil) {
+            NSLog(@"Unresolved error %@, %@",error,[error userInfo]);
+            abort();
+        }
     } //else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     //}

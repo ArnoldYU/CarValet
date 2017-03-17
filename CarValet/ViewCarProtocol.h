@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class Car;
+@class CDCar;
 
 @protocol ViewCarProtocol <NSObject>
 
-- (Car*)carToView;
+- (CDCar*)carToView;
 
 - (void)carViewDone: (BOOL)dataChanged;
 

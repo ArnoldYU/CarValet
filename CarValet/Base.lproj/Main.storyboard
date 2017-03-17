@@ -453,7 +453,7 @@
                     <navigationItem key="navigationItem" title="CarValet" id="Qtt-fe-Lth">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4eO-Tq-0uv">
                             <connections>
-                                <action selector="newCar:" destination="bg8-aT-Xqm" id="fQo-bx-vF0"/>
+                                <action selector="newCar:" destination="bg8-aT-Xqm" id="eIM-6U-Niz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

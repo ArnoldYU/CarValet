@@ -7,7 +7,7 @@
 //
 
 #import "CarTableViewCell.h"
-#import "Car.h"
+#import "CDCar+CoreDataProperties.h"
 @implementation CarTableViewCell
 
 - (void)awakeFromNib {

@@ -9,7 +9,7 @@
 #import "ViewCarTableViewController.h"
 #import "MakeModelEditViewController.h"
 #import "YearEditViewController.h"
-#include "Car.h"
+#import "CDCar+CoreDataProperties.h"
 
 #define kCurrentEditMake 0
 #define kCurrentEditModel 1

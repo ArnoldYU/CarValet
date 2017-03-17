@@ -13,6 +13,10 @@
 		A71606711E643CB0000B22A3 /* MakeModelEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A71606701E643CB0000B22A3 /* MakeModelEditViewController.m */; };
 		A736A2691E2E2D4B00C9868B /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A736A2671E2E2D4B00C9868B /* AboutViewController.m */; };
 		A736A26A1E2E2D4B00C9868B /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A736A2681E2E2D4B00C9868B /* AboutViewController.xib */; };
+		A74B7A891E7ACACF00E087AF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A74B7A881E7ACACF00E087AF /* CoreData.framework */; };
+		A74B7A8C1E7ACAE300E087AF /* CarValet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A74B7A8A1E7ACAE300E087AF /* CarValet.xcdatamodeld */; };
+		A74B7A9D1E7ACC4D00E087AF /* CDCar+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A74B7A9A1E7ACC4D00E087AF /* CDCar+CoreDataClass.m */; };
+		A74B7A9E1E7ACC4D00E087AF /* CDCar+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A74B7A9C1E7ACC4D00E087AF /* CDCar+CoreDataProperties.m */; };
 		A78819E91E083F2C00B23420 /* CarEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A78819E81E083F2C00B23420 /* CarEditViewController.m */; };
 		A7A062571E2B63F600D2577F /* CarImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A062561E2B63F600D2577F /* CarImageViewController.m */; };
 		A7C55BD71E18E5900042EEC1 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = A7C55BD61E18E5900042EEC1 /* Base.lproj */; };
@@ -42,6 +46,12 @@
 		A736A2661E2E2D4B00C9868B /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		A736A2671E2E2D4B00C9868B /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		A736A2681E2E2D4B00C9868B /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		A74B7A881E7ACACF00E087AF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A74B7A8B1E7ACAE300E087AF /* CarValet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarValet.xcdatamodel; sourceTree = "<group>"; };
+		A74B7A991E7ACC4D00E087AF /* CDCar+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CDCar+CoreDataClass.h"; path = "../CDCar+CoreDataClass.h"; sourceTree = "<group>"; };
+		A74B7A9A1E7ACC4D00E087AF /* CDCar+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CDCar+CoreDataClass.m"; path = "../CDCar+CoreDataClass.m"; sourceTree = "<group>"; };
+		A74B7A9B1E7ACC4D00E087AF /* CDCar+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CDCar+CoreDataProperties.h"; path = "../CDCar+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A74B7A9C1E7ACC4D00E087AF /* CDCar+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CDCar+CoreDataProperties.m"; path = "../CDCar+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A78819E71E083F2C00B23420 /* CarEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarEditViewController.h; sourceTree = "<group>"; };
 		A78819E81E083F2C00B23420 /* CarEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarEditViewController.m; sourceTree = "<group>"; };
 		A7A062511E27B24800D2577F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -81,18 +91,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A74B7A891E7ACACF00E087AF /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A74B7A871E7ACACF00E087AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A74B7A881E7ACACF00E087AF /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A7CB06861DFEC01400EF19CF = {
 			isa = PBXGroup;
 			children = (
 				A7CB06911DFEC01500EF19CF /* CarValet */,
 				A7CB06901DFEC01500EF19CF /* Products */,
 				A7C55BD61E18E5900042EEC1 /* Base.lproj */,
+				A74B7A871E7ACACF00E087AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +127,10 @@
 		A7CB06911DFEC01500EF19CF /* CarValet */ = {
 			isa = PBXGroup;
 			children = (
+				A74B7A991E7ACC4D00E087AF /* CDCar+CoreDataClass.h */,
+				A74B7A9A1E7ACC4D00E087AF /* CDCar+CoreDataClass.m */,
+				A74B7A9B1E7ACC4D00E087AF /* CDCar+CoreDataProperties.h */,
+				A74B7A9C1E7ACC4D00E087AF /* CDCar+CoreDataProperties.m */,
 				A7FAC4951E1148490033903F /* CarEditViewControllerProtocol.h */,
 				A7CB06951DFEC01500EF19CF /* AppDelegate.h */,
 				A7CB06961DFEC01500EF19CF /* AppDelegate.m */,
@@ -126,6 +150,7 @@
 				A736A2671E2E2D4B00C9868B /* AboutViewController.m */,
 				A736A2681E2E2D4B00C9868B /* AboutViewController.xib */,
 				A7CB06921DFEC01500EF19CF /* Supporting Files */,
+				A74B7A8A1E7ACAE300E087AF /* CarValet.xcdatamodeld */,
 				A7CB06AC1DFEC17100EF19CF /* Car.h */,
 				A7CB06AD1DFEC17100EF19CF /* Car.m */,
 				A78819E71E083F2C00B23420 /* CarEditViewController.h */,
@@ -239,10 +264,13 @@
 				A78819E91E083F2C00B23420 /* CarEditViewController.m in Sources */,
 				A736A2691E2E2D4B00C9868B /* AboutViewController.m in Sources */,
 				A7FCB5701E685BEC0047FD03 /* YearEditViewController.m in Sources */,
+				A74B7A9E1E7ACC4D00E087AF /* CDCar+CoreDataProperties.m in Sources */,
 				A7CB06AE1DFEC17100EF19CF /* Car.m in Sources */,
 				A7CB06941DFEC01500EF19CF /* main.m in Sources */,
+				A74B7A8C1E7ACAE300E087AF /* CarValet.xcdatamodeld in Sources */,
 				A71606711E643CB0000B22A3 /* MakeModelEditViewController.m in Sources */,
 				A716066E1E642DF7000B22A3 /* ViewCarTableViewController.m in Sources */,
+				A74B7A9D1E7ACC4D00E087AF /* CDCar+CoreDataClass.m in Sources */,
 				A703D9A01E63CC880043F1CF /* CarTableViewCell.m in Sources */,
 				A7A062571E2B63F600D2577F /* CarImageViewController.m in Sources */,
 			);
@@ -440,6 +468,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A74B7A8A1E7ACAE300E087AF /* CarValet.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A74B7A8B1E7ACAE300E087AF /* CarValet.xcdatamodel */,
+			);
+			currentVersion = A74B7A8B1E7ACAE300E087AF /* CarValet.xcdatamodel */;
+			path = CarValet.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A7CB06871DFEC01400EF19CF /* Project object */;
 }

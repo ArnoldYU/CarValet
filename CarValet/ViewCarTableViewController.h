@@ -10,7 +10,7 @@
 #import "MakeModelEditProtocol.h"
 #import "YearEditProtocol.h"
 #import "ViewCarProtocol.h"
-@class Car;
+@class CDCar;
 @interface ViewCarTableViewController : UITableViewController
 <MakeModelEditProtocol, UINavigationControllerDelegate,YearEditProtocol>
 
@@ -20,6 +20,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *fuelLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property Car *myCar;
+@property CDCar *myCar;
 @property (weak, nonatomic) id <ViewCarProtocol> delegate;
 @end

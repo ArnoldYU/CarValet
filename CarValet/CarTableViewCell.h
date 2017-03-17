@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Car;
+@class CDCar;
 @interface CarTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) Car *myCar;
+@property (strong, nonatomic) CDCar *myCar;
 
 - (void)configureCell;
 @end
