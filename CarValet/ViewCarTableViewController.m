@@ -76,7 +76,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.navigationController.delegate = self;
+    self.navigationController.delegate = self;	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,10 +86,11 @@
 
 - (NSInteger)editYearValue {
     return self.myCar.year;
+    
 }
 
 - (void)editYearDone:(NSInteger)yearValue {
-    if(yearValue != self.myCar.year) {
+    if(yearValue != self.myCar.year ) {
         self.myCar.year = yearValue;
         
         self.yearLabel.text = [NSString stringWithFormat:@"%d",self.myCar.year];

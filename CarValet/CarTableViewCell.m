@@ -24,7 +24,7 @@
 - (void)configureCell {
     NSString *make = (self.myCar.make == nil) ? @"Unknown" : self.myCar.make;//1 汽车的make或model可能为nil，所以将其设置为默认值
     NSString *model = (self.myCar.model == nil) ? @"Unknown" : self.myCar.model;
-    self.textLabel.text = [NSString stringWithFormat:@"%d %@ %@",self.myCar.year,make,model];//2 将主编前设置为汽车的year、make和model
+    self.textLabel.text = [NSString stringWithFormat:@"%hd %@ %@",self.myCar.year,make,model];//2 将主编前设置为汽车的year、make和model
     
     NSString *dateStr = [NSDateFormatter localizedStringFromDate:self.myCar.dateCreated
                                                        dateStyle:NSDateFormatterShortStyle
